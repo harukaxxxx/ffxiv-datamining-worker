@@ -21,7 +21,7 @@ jobs:
         run: git clone --branch $tag --depth 1 https://github.com/${library_repo}.git library
 
       - name: Clone teamcraft
-        run: git clone --branch feat/tw/ffxiv-datamining-tw --depth 1 https://github.com/${teamcraft_repo}.git teamcraft
+        run: git clone --branch staging --depth 1 https://github.com/${teamcraft_repo}.git teamcraft
 
       - name: Run data generator
         run: |
