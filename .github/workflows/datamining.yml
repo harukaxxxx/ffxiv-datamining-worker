@@ -18,7 +18,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Fetch library
-        run: git clone --branch $tag --depth 1 https://github.com/${library_repo}.git library
+        run:
+          git clone --branch $tag --depth 1 https://github.com/${library_repo}.git tmp_lib
+          mkdir -p library
+          cp -r tmp_lib/rawexd/* library/
+          rm -rf tmp_lib
 
       - name: Clone teamcraft
         run: git clone --branch staging --depth 1 https://github.com/${teamcraft_repo}.git teamcraft
